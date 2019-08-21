@@ -11,7 +11,7 @@ export class ListComponent {
     public displayedColumns: string[];
     public service: any;
     public notify: any;
-    public options: object;
+    public options: any;
     public safe_pagination: boolean;
     public methodLoad = 'getData';
     public status_form = { loading: false };
@@ -58,6 +58,11 @@ export class ListComponent {
         this.componentData = data;
         this.filtredComponentData = data;
         this.dataSource = new ComponentDataSource(data, mobile);
+    }
+
+    protected clean(): void {
+        this.dataSource = undefined;
+        this.componentData = undefined;
     }
 
     protected list(options: object, mobile: boolean): void {
