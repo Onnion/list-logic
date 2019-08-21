@@ -2,14 +2,13 @@ import { MatPaginator, PageEvent } from '@angular/material';
 import { EventEmitter } from '@angular/core';
 import { ComponentDataSource } from './data-source';
 
-export class ListComponent<T> {
+export class ListComponent {
     public $pagination: MatPaginator;
     public doneLoad: EventEmitter<any> = new EventEmitter<any>();
     public dataSource: ComponentDataSource;
     public isMobile: boolean;
     public expandedElement: boolean;
     public displayedColumns: string[];
-    public filterService: T;
     public service: any;
     public notify: any;
     public options: object;
